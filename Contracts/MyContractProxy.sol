@@ -22,6 +22,10 @@ contract MyContractProxy is BaseContract {
         implementationAddress = _newImpl;
     }
 
+    function testContract(address addr) external view returns (uint256) {
+        MyContractV1 contractAddr = MyContractV1(addr);
+        return contractAddr.myValue();
+    }
 
     fallback () external payable {
         address _impl = implementationAddress;
