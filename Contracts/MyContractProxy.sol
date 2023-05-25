@@ -27,6 +27,11 @@ contract MyContractProxy is BaseContract {
         return contractAddr.myValue();
     }
 
+    function testg() external pure {
+
+    }
+
+
     fallback () external payable {
         address _impl = implementationAddress;
        
